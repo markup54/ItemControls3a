@@ -40,12 +40,58 @@
                 </ItemsControl>
             </TabItem>
             <TabItem Header="ListBox">
-                
-                
+                <ListBox ItemsSource="{Binding ListaProduktow}"
+                         SelectionMode="Multiple">
+                    <ListBox.ItemTemplate>
+                        
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Nazwa}"/>
+                                <Label Content="{Binding Cena}"/>
+                                <Label Content="{Binding Dostepnosc}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
             </TabItem>
 
-            <TabItem Header="ListView"/>
-            <TabItem Header="DataGrid"/>
+            <TabItem Header="ListView">
+                <ListView ItemsSource="{Binding ListaProduktow}">
+                    
+                        <!--
+                    <Label>djghad</Label>
+                    <Label>djghad</Label>
+                    <Label>djghad</Label>
+                    <Label>djghad</Label>
+                    <Label>djghad</Label>
+                    
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Nazwa}"/>
+                                <Label Content="{Binding Cena}"/>
+                                <Label Content="{Binding Dostepnosc}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                        -->
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn DisplayMemberBinding="{Binding Nazwa}" Header="NAzwa"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Cena}" Header="Cena"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Dostepnosc}" Header="Dostepnośść"/>
+                            </GridView>
+
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="DataGrid">
+                <DataGrid ItemsSource="{Binding ListaProduktow}"
+                          IsReadOnly="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="NAzwa" Binding="Nazwa"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
         </TabControl>
 
     </Grid>
