@@ -20,9 +20,29 @@ namespace ItemControls3a
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Produkt> ListaProduktow { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
+
+            
+        
+            ListaProduktow = new List<Produkt>();
+            ListaProduktow.Add(new Produkt("farbki", 12, true));
+            ListaProduktow.Add(new Produkt("kredki", 20, true));
+            ListaProduktow.Add(new Produkt("blok", 5, true));
+     
+            ListaProduktow.Add(new Produkt("ołowekB5", 2, true));
+            ListaProduktow.Add(new Produkt("ołowekB4", 2, true));
+            ListaProduktow.Add(new Produkt("ołowekB3", 2, true));
+            ListaProduktow.Add(new Produkt("ołowekB2", 2, true));
+            ListaProduktow.Add(new Produkt("ołowekB", 2, true));
+            ListaProduktow.Add(new Produkt("ołowekHB", 2, true));
+            ListaProduktow.Add(new Produkt("ołowekHB", 1, true));
+            ListaProduktow.Add(new Produkt("ołowekHB", 1, true));
+            ListaProduktow.Add(new Produkt("ołowekH", 2, true));
+           
         }
     }
 }

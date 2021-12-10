@@ -7,9 +7,43 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TabControl SelectedIndex="2">
-            <TabItem Header="ContentControl"/>
-            <TabItem Header="ListBox"/>
+        <TabControl 
+            SelectedIndex="2" 
+            TabStripPlacement="Top"
+            BorderThickness="10"
+            BorderBrush="Aqua"
+            >
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="ContentControl"/>
+                        <Rectangle Width="10" Height="10" Fill="BlanchedAlmond"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <ItemsControl ItemsSource="{Binding ListaProduktow}">
+                    <ItemsControl.ItemTemplate>
+                    <!--
+                    <Label>djghad</Label>
+                    <Label>djghad</Label>
+                    <Label>djghad</Label>
+                    <Label>djghad</Label>
+                    <Label>djghad</Label>
+                    -->
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Nazwa}"/>
+                            <Label Content="{Binding Cena}"/>
+                            <Label Content="{Binding Dostepnosc}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </TabItem>
+            <TabItem Header="ListBox">
+                
+                
+            </TabItem>
+
             <TabItem Header="ListView"/>
             <TabItem Header="DataGrid"/>
         </TabControl>
